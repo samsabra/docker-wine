@@ -24,6 +24,7 @@ RUN apt-get update \
         xvfb \
         zenity \
     && rm -rf /var/lib/apt/lists/*
+    
 
 # Install wine
 ARG WINE_BRANCH="stable"
