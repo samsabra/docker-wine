@@ -1,12 +1,12 @@
 # docker-wine
 
-[![build](https://github.com/scottyhardy/docker-wine/actions/workflows/build.yml/badge.svg)](https://github.com/scottyhardy/docker-wine/actions/workflows/build.yml)
-[![Docker Pulls](https://img.shields.io/docker/pulls/scottyhardy/docker-wine.svg?style=social)](https://hub.docker.com/r/scottyhardy/docker-wine)
-[![Docker Stars](https://img.shields.io/docker/stars/scottyhardy/docker-wine.svg?style=social)](https://hub.docker.com/r/scottyhardy/docker-wine)
-[![GitHub forks](https://img.shields.io/github/forks/scottyhardy/docker-wine.svg?style=social)](https://github.com/scottyhardy/docker-wine/network)
-[![GitHub stars](https://img.shields.io/github/stars/scottyhardy/docker-wine.svg?style=social)](https://github.com/scottyhardy/docker-wine/stargazers)
+[![build](https://github.com/samsabra/docker-wine/actions/workflows/build.yml/badge.svg)](https://github.com/samsabra/docker-wine/actions/workflows/build.yml)
+[![Docker Pulls](https://img.shields.io/docker/pulls/samsabra/docker-wine.svg?style=social)](https://hub.docker.com/r/samsabra/docker-wine)
+[![Docker Stars](https://img.shields.io/docker/stars/samsabra/docker-wine.svg?style=social)](https://hub.docker.com/r/samsabra/docker-wine)
+[![GitHub forks](https://img.shields.io/github/forks/samsabra/docker-wine.svg?style=social)](https://github.com/samsabra/docker-wine/network)
+[![GitHub stars](https://img.shields.io/github/stars/samsabra/docker-wine.svg?style=social)](https://github.com/samsabra/docker-wine/stargazers)
 
-<img align="right" height="300" width="300" src="https://raw.githubusercontent.com/scottyhardy/docker-wine/master/images/logo.png" >
+<img align="right" height="300" width="300" src="https://raw.githubusercontent.com/samsabra/docker-wine/master/images/logo.png" >
 
 >Docker image that includes Wine and Winetricks for running Windows applications on Linux and macOS
 
@@ -25,14 +25,14 @@ Using the `docker-wine` script is the easiest way to get started and should be a
 On Linux:
 
 ```bash
-wget https://raw.githubusercontent.com/scottyhardy/docker-wine/master/docker-wine
+wget https://raw.githubusercontent.com/samsabra/docker-wine/master/docker-wine
 chmod +x docker-wine
 ```
 
 On macOS:
 
 ```bash
-curl -O https://raw.githubusercontent.com/scottyhardy/docker-wine/master/docker-wine
+curl -O https://raw.githubusercontent.com/samsabra/docker-wine/master/docker-wine
 chmod +x docker-wine
 ```
 
@@ -50,7 +50,7 @@ You can override the default interactive bash session by adding `wine`, `winetri
 ./docker-wine wine notepad
 ```
 
-![Screenshot of Notepad](https://raw.githubusercontent.com/scottyhardy/docker-wine/master/images/screenshot_1.png)
+![Screenshot of Notepad](https://raw.githubusercontent.com/samsabra/docker-wine/master/images/screenshot_1.png)
 
 ## Run `docker-wine` with Xvfb
 
@@ -107,9 +107,9 @@ Username: wineuser
 Password: wineuser
 ```
 
-![Screenshot of login prompt](https://raw.githubusercontent.com/scottyhardy/docker-wine/master/images/screenshot_2.png)
+![Screenshot of login prompt](https://raw.githubusercontent.com/samsabra/docker-wine/master/images/screenshot_2.png)
 
-![Screenshot of XFCE desktop](https://raw.githubusercontent.com/scottyhardy/docker-wine/master/images/screenshot_3.png)
+![Screenshot of XFCE desktop](https://raw.githubusercontent.com/samsabra/docker-wine/master/images/screenshot_3.png)
 
 ## Additional options when running `docker-wine`
 
@@ -173,7 +173,7 @@ Then simply `cat` the file when using the `docker-wine` script:
 First, clone the repository from GitHub:
 
 ```bash
-git clone https://github.com/scottyhardy/docker-wine.git
+git clone https://github.com/samsabra/docker-wine.git
 cd docker-wine
 ```
 
@@ -207,10 +207,10 @@ docker volume rm winehome
 
 ## Use docker-wine image in a Dockerfile
 
-If you plan to use `scottyhardy/docker-wine` as a base for another Docker image, you should set up the same `ENTRYPOINT` to enable X11 forwarding and RDP server modes to continue operating:
+If you plan to use `samsabra/docker-wine` as a base for another Docker image, you should set up the same `ENTRYPOINT` to enable X11 forwarding and RDP server modes to continue operating:
 
 ```dockerfile
-FROM scottyhardy/docker-wine:latest
+FROM samsabra/docker-wine:latest
 ... <your code here>
 ENTRYPOINT ["/usr/bin/entrypoint"]
 ```
@@ -222,7 +222,7 @@ There's a number of prerequisites to getting pulseaudio redirection working on L
 First, pull the latest image from DockerHub:
 
 ```bash
-docker pull scottyhardy/docker-wine
+docker pull samsabra/docker-wine
 ```
 
 Here is a basic `docker run` command for X11 redirection on Linux that will start an interactive bash session:
@@ -234,7 +234,7 @@ docker run -it \
   --env="DISPLAY" \
   --volume="${XAUTHORITY:-${HOME}/.Xauthority}:/root/.Xauthority:ro" \
   --volume="/tmp/.X11-unix:/tmp/.X11-unix:ro" \
-  scottyhardy/docker-wine /bin/bash
+  samsabra/docker-wine /bin/bash
 ```
 
 Here is a basic `docker run` command for starting the RDP server on both macOS and Linux with an interactive bash session:
@@ -245,7 +245,7 @@ docker run -it \
   --hostname="$(hostname)" \
   --env="RDP_SERVER=yes" \
   --publish="3389:3389/tcp" \
-  scottyhardy/docker-wine /bin/bash
+  samsabra/docker-wine /bin/bash
 ```
 
 ## Troubleshooting

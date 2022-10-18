@@ -71,14 +71,14 @@ jobs:
         with:
           cond: ${{ matrix.wine_branch == 'stable' }}
           if_true:
-            scottyhardy/docker-wine:latest,
-            scottyhardy/docker-wine:${{ matrix.wine_branch }},
-            scottyhardy/docker-wine:${{ matrix.wine_branch }}-${{ steps.wine_ver.outputs.value }},
-            scottyhardy/docker-wine:${{ matrix.wine_branch }}-${{ steps.wine_ver.outputs.value }}-${{ steps.timestamp.outputs.value }}
+            samsabra/docker-wine:latest,
+            samsabra/docker-wine:${{ matrix.wine_branch }},
+            samsabra/docker-wine:${{ matrix.wine_branch }}-${{ steps.wine_ver.outputs.value }},
+            samsabra/docker-wine:${{ matrix.wine_branch }}-${{ steps.wine_ver.outputs.value }}-${{ steps.timestamp.outputs.value }}
           if_false:
-            scottyhardy/docker-wine:${{ matrix.wine_branch }},
-            scottyhardy/docker-wine:${{ matrix.wine_branch }}-${{ steps.wine_ver.outputs.value }},
-            scottyhardy/docker-wine:${{ matrix.wine_branch }}-${{ steps.wine_ver.outputs.value }}-${{ steps.timestamp.outputs.value }}
+            samsabra/docker-wine:${{ matrix.wine_branch }},
+            samsabra/docker-wine:${{ matrix.wine_branch }}-${{ steps.wine_ver.outputs.value }},
+            samsabra/docker-wine:${{ matrix.wine_branch }}-${{ steps.wine_ver.outputs.value }}-${{ steps.timestamp.outputs.value }}
       -
         name: Build and push
         id: docker_build
@@ -94,4 +94,4 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: scottyhardy/docker-wine
+          repository: samsabra/docker-wine

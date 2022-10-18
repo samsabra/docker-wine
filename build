@@ -45,7 +45,7 @@ get_os_codename () {
     done
 
     # Determine which OS codename has the latest version of Wine or use the _older_ OS if both the same
-    # as many issues when using latest OS. Refer to https://github.com/scottyhardy/docker-wine/issues/92
+    # as many issues when using latest OS. Refer to https://github.com/samsabra/docker-wine/issues/92
     local latest_wine_ver
     latest_wine_ver=$(printf '%s\n' "${wine_versions[@]}" | sort -rV | head -1)
 
@@ -86,7 +86,7 @@ if is_enabled "${NO_RDP}"; then
     BASE_IMAGE="ubuntu"
     TAG="${UBUNTU_CODENAME}"
 elif is_disabled "${NO_RDP}"; then
-    BASE_IMAGE="scottyhardy/docker-remote-desktop"
+    BASE_IMAGE="samsabra/docker-remote-desktop"
     TAG="ubuntu-${UBUNTU_CODENAME}"
 else
     echo "ERROR: Invalid value '${NO_RDP}' used for NO_RDP"

@@ -10,11 +10,11 @@ The ways that you can contribute include:
 * Requesting features and enhancements
 * Submitting a pull request to merge changes and enhancements directly to the repository
 
-If you're unsure where to start, check the [Issue register](https://github.com/scottyhardy/docker-wine/issues) for any tasks you may be able to contribute to.  I'd also really like to set up some automated testing to improve the CI/CD workflow and prevent bugs being introduced, so if that's an area you can help with then I'd like to hear from you!
+If you're unsure where to start, check the [Issue register](https://github.com/samsabra/docker-wine/issues) for any tasks you may be able to contribute to.  I'd also really like to set up some automated testing to improve the CI/CD workflow and prevent bugs being introduced, so if that's an area you can help with then I'd like to hear from you!
 
 ## Reporting bugs and requesting features
 
-Bugs and feature requests can be submitted by opening a [New Issue](https://github.com/scottyhardy/docker-wine/issues/new/choose).
+Bugs and feature requests can be submitted by opening a [New Issue](https://github.com/samsabra/docker-wine/issues/new/choose).
 
 ## Pull requests
 
@@ -31,7 +31,7 @@ I also prefer to use [Conventional Commits](https://www.conventionalcommits.org)
 
 ## Deployment of images
 
-I currently use both [Docker Hub](https://hub.docker.com/r/scottyhardy/docker-wine/builds) and [Travis CI](https://travis-ci.com/github/scottyhardy/docker-wine) to perform automated builds.
+I currently use both [Docker Hub](https://hub.docker.com/r/samsabra/docker-wine/builds) and [Travis CI](https://travis-ci.com/github/samsabra/docker-wine) to perform automated builds.
 
 ### Docker Hub
 
@@ -47,4 +47,4 @@ If you want to use Travis CI for your own forked repository, then for automated 
 * `DOCKER_USERNAME`
 * `DOCKER_PASSWORD`
 
-So, for example with `DOCKER_REPO` I use `docker-wine`, `DOCKER_USERNAME` is `scottyhardy` and for `DOCKER_PASSWORD` I use a [Docker Hub personal access token](https://docs.docker.com/docker-hub/access-tokens/). By substituting your own values for the above Environment Variables you can automate publishing your own images to Docker Hub.
+So, for example with `DOCKER_REPO` I use `docker-wine`, `DOCKER_USERNAME` is `samsabra` and for `DOCKER_PASSWORD` I use a [Docker Hub personal access token](https://docs.docker.com/docker-hub/access-tokens/). By substituting your own values for the above Environment Variables you can automate publishing your own images to Docker Hub.

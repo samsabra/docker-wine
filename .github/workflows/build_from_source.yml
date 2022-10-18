@@ -126,7 +126,7 @@ jobs:
           platforms: linux/${{ matrix.platform }}
           push: true
           tags:
-            scottyhardy/docker-wine:${{ matrix.platform }},
-            scottyhardy/docker-wine:devel-${{ steps.wine_ver.outputs.value }}-${{ matrix.platform }},
-            scottyhardy/docker-wine:devel-${{ steps.wine_ver.outputs.value }}-${{ matrix.platform }}-${{ steps.timestamp.outputs.value }}
+            samsabra/docker-wine:${{ matrix.platform }},
+            samsabra/docker-wine:devel-${{ steps.wine_ver.outputs.value }}-${{ matrix.platform }},
+            samsabra/docker-wine:devel-${{ steps.wine_ver.outputs.value }}-${{ matrix.platform }}-${{ steps.timestamp.outputs.value }}
           target: ci-final
